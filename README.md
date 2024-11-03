@@ -16,7 +16,9 @@ Outlines [specialists](https://darktide.gameslantern.com/enemies?type=SPECIALIST
 
 ## Elite
 Outlines [elite](https://darktide.gameslantern.com/enemies?type=ELITE) enemies and [captains](https://darktide.gameslantern.com/enemies?type=CAPTAIN).
-![Elite](./info/Elite.jpg)
+![Elite](./info/Elite.jpg)  
+![Elite2](./info/Elite2.jpg)
 
 ## Monstrosity
-Outlines [Monstrosities](https://darktide.gameslantern.com/enemies?type=MONSTROSITY).
+Outlines [Monstrosities](https://darktide.gameslantern.com/enemies?type=MONSTROSITY).  
+![Monstrosity](./info/Monstrosity.jpg)  
