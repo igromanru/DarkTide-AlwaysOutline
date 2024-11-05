@@ -22,3 +22,6 @@ Outlines [elite](https://darktide.gameslantern.com/enemies?type=ELITE) enemies a
 ## Monstrosity
 Outlines [Monstrosities](https://darktide.gameslantern.com/enemies?type=MONSTROSITY).  
 ![Monstrosity](./info/Monstrosity.jpg)  
+
+## In game
+![Preview1](./info/Preview1.jpg)  
