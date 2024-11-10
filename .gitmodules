@@ -1,0 +1,4 @@
+[submodule "scripts/mods/AlwaysOutline/ModUtils"]
+	path = scripts/mods/AlwaysOutline/ModUtils
+	url = https://github.com/igromanru/DarkTide-ModUtils.git
+	branch = master

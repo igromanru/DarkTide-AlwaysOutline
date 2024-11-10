@@ -1,6 +1,7 @@
 local mod = get_mod("AlwaysOutline")
 
 local OutlineSettings = require("scripts/settings/outline/outline_settings")
+local ModUtils = mod:io_dofile("AlwaysOutline/scripts/mods/AlwaysOutline/ModUtils/ModUtils") ---@type ModUtils
 
 local ALL_ENEMY = "all_enemy"
 local SPECIALIST_ENEMY = "specialist_enemy"
@@ -78,29 +79,6 @@ mod:hook_require("scripts/settings/outline/outline_settings", function(instance)
 	mod:update_outline_settings(instance)
 end)
 
-local function get_my_player_unit()
-	if not Managers.player then return nil end
-
-	local player = Managers.player:local_player(1)
-	return player.player_unit
-end
-
-local function get_side(unit)
-	if not unit then return nil end
-
-	local side_system = Managers.state.extension:system("side_system")
-	if not side_system then return nil end
-
-	return side_system.side_by_unit[unit]
-end
-
-local function get_enemy_units()
-	local side = get_side(get_my_player_unit())
-	if not side then return {} end
-
-	return side.enemy_units_lookup or {}
-end
-
 local function get_breed_tags(enemy_unit_data_extension)
 	if enemy_unit_data_extension then
 		local breed = enemy_unit_data_extension:breed()
@@ -122,13 +100,10 @@ local function set_outline_color(unit, outline_unit_data_extension)
 end
 
 function mod.tick(self)
-	if not Managers.state or not Managers.state.extension then return end
-
-	local has_outline_system = Managers.state.extension:has_system("outline_system")
-	if has_outline_system then
-		local enemy_units = get_enemy_units()
-		local outline_system = Managers.state.extension:system("outline_system")
-		for enemy_unit, _ in pairs(enemy_units) do
+	local outline_system = ModUtils.get_outline_system()
+	if outline_system then
+		local enemy_units = ModUtils.get_enemy_units()
+		for _, enemy_unit in ipairs(enemy_units) do
 			local outline_unit_data_extension = outline_system._unit_extension_data[enemy_unit]
 			if outline_unit_data_extension and outline_unit_data_extension.outlines then
 				local outlines_count = #outline_unit_data_extension.outlines
