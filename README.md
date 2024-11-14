@@ -1,5 +1,5 @@
 # Always Outline mod for Warhammer 40,000: Darktide
-The mod applies outlines to all or chosen enemy groups automatically.
+The mod applies outlines to all or chosen enemy groups automatically.  
 
 ## Settings
 Per default the mod uses the color [Grey](https://www.colorhexa.com/808080) (128, 128, 128) for all outlines. If you want to improve the visibility, you can simply change it to [White](https://www.colorhexa.com/ffffff) (255, 255, 255).  

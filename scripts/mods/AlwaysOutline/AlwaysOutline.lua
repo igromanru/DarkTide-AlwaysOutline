@@ -115,7 +115,7 @@ function mod.tick(self)
 					outline_system:remove_outline(enemy_unit, SPECIALIST_ENEMY)
 					outline_system:remove_outline(enemy_unit, ELITE_ENEMY)
 				elseif outlines_count < 1 then
-					local enemy_unit_data_extension = ScriptUnit.has_extension(enemy_unit, "unit_data_system")
+					local enemy_unit_data_extension = ScriptUnit.extension(enemy_unit, "unit_data_system")
 					local breed_tags = get_breed_tags(enemy_unit_data_extension)
 					if breed_tags then
 						if self:get(ELITE_ENEMY_SETTING) and (breed_tags.elite or breed_tags.captain) then
