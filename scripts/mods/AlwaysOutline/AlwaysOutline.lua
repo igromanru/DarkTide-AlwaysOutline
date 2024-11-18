@@ -102,10 +102,13 @@ end
 function mod.tick(self)
 	local outline_system = ModUtils.get_outline_system()
 	if outline_system then
-		local enemy_units_lookup = ModUtils.get_enemy_units_lookup()
-		if not enemy_units_lookup then return end
-
-		for enemy_unit, _ in pairs(enemy_units_lookup) do
+		local enemy_units = ModUtils.get_enemy_units()
+		if not enemy_units then return end
+		
+		-- local enemy_units_lookup = ModUtils.get_enemy_units_lookup()
+		-- if not enemy_units_lookup then return end
+		-- for enemy_unit, _ in pairs(enemy_units_lookup) do
+		for _, enemy_unit in ipairs(enemy_units) do
 			local outline_unit_data_extension = outline_system._unit_extension_data[enemy_unit]
 			if outline_unit_data_extension and outline_unit_data_extension.outlines then
 				local outlines_count = #outline_unit_data_extension.outlines
